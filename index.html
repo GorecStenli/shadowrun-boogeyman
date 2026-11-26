@@ -64,11 +64,12 @@
   .btn:active{background:var(--edit);}
   .over{display:grid;grid-template-columns:repeat(4,30px);gap:4px;justify-content:center;}
   .over .cmbox{width:30px;height:24px;font-size:14px;}
-  .note{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:6px;line-height:1.4;}
+  .note{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:6px;line-height:1.4;}
   .bg-edit{min-height:54px;width:100%;background:var(--edit);border:1px solid var(--edge);border-radius:6px;color:var(--fg);padding:6px 8px;font-family:var(--body);font-size:13px;line-height:1.35;outline:none;}
   .bg-edit:focus{border-color:var(--cyan);}
   .sub2{font-family:var(--mono);font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:6px 0 2px;}
-  .fx{font-family:var(--mono);font-size:9px;color:var(--muted);line-height:1.25;margin-top:2px;}
+  .fx{font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.3;margin-top:2px;}
+  .fx.acc{color:#9fb3cc;}
   .gbal{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:8px;font-family:var(--mono);font-size:12px;}
   .gbl{color:var(--muted);}
   .gbl b{color:var(--amber);font-family:var(--disp);font-size:13px;margin-left:2px;}
@@ -200,7 +201,7 @@
           <tr><td>Intelligence</td><td class="ctr e" data-k="a-int-n" contenteditable="true">4</td><td class="ctr e" data-k="a-int-a" contenteditable="true">4</td></tr>
           <tr><td>Willpower</td><td class="ctr e" data-k="a-wil-n" contenteditable="true">5</td><td class="ctr e" data-k="a-wil-a" contenteditable="true">5</td></tr>
           <tr><td>Essence</td><td class="ctr e" data-k="a-ess-n" contenteditable="true">6</td><td class="ctr e" data-k="a-ess-a" contenteditable="true">0.2</td></tr>
-          <tr><td>Body Index</td><td class="ctr">&mdash;</td><td class="ctr e" data-k="a-bi" contenteditable="true">5.70</td></tr>
+          <tr><td>Body Index</td><td class="ctr">&mdash;</td><td class="ctr e" data-k="a-bi" contenteditable="true">6.00</td></tr>
           <tr><td>Reaction</td><td class="ctr e" data-k="a-rea-n" contenteditable="true">7</td><td class="ctr e" data-k="a-rea-a" contenteditable="true">16</td></tr>
           <tr><td>Init Dice</td><td class="ctr">1</td><td class="ctr e" data-k="a-ini" contenteditable="true">+2</td></tr>
         </table>
@@ -427,7 +428,7 @@
         <tr><td><span class="e" data-k="cy13" contenteditable="true">Ext. Clip Port + Fingertip Compt.</span><div class="fx">fast external reload; hidden fingertip stash</div></td><td class="ctr e" data-k="cy13g" contenteditable="true">A</td><td class="ctr e" data-k="cy13r" contenteditable="true">&mdash;</td><td class="ctr e" data-k="cy13e" contenteditable="true">0.00</td></tr>
 <tr><td><span class="e" data-k="cy14" contenteditable="true">Auto-Injector (+5 doses)</span><div class="fx">injects a loaded dose on command/trigger &mdash; stim, antidote, trauma patch or combat drug; holds 5 spare doses at no Essence</div></td><td class="ctr e" data-k="cy14g" contenteditable="true">A</td><td class="ctr e" data-k="cy14r" contenteditable="true">&mdash;</td><td class="ctr e" data-k="cy14e" contenteditable="true">0.08</td></tr>
       </table>
-      <div class="note">Essence 0.12 free of 6. All Alpha, bought <b>used</b> (used cuts nuyen, not Essence). Auto-Injector carries 5 spare doses at no Essence. Low-light now via goggles (Cat&rsquo;s Eyes dropped). Guns, spurs &amp; claws sit in the cyberarm at 0.00.</div>
+      <div class="note">Essence 0.12 free of 6. All Alpha, bought <b>used</b> (used cuts nuyen, not Essence). Auto-Injector carries 5 spare doses at no Essence. Low-light from Cat&rsquo;s Eyes; goggles add thermographic. Guns, spurs &amp; claws sit in the cyberarm at 0.00.</div>
     </div>
     <div class="box">
       <h2>Bioware (Body Index, max = Body 6)</h2>
@@ -439,9 +440,9 @@
         <tr><td><span class="e" data-k="bi4" contenteditable="true">Orthoskin</span><div class="fx">+2 ballistic / +1 impact armor (subdermal)</div></td><td class="ctr e" data-k="bi4r" contenteditable="true">2</td><td class="ctr e" data-k="bi4b" contenteditable="true">1.00</td></tr>
         <tr><td><span class="e" data-k="bi5" contenteditable="true">Enhanced Articulation</span><div class="fx">+1 Reaction, +1 die to physical skills</div></td><td class="ctr e" data-k="bi5r" contenteditable="true">&mdash;</td><td class="ctr e" data-k="bi5b" contenteditable="true">0.60</td></tr>
         <tr><td><span class="e" data-k="bi8" contenteditable="true">Trauma Damper</span><div class="fx">softens wounds &mdash; reduces incoming damage severity / wound penalties</div></td><td class="ctr e" data-k="bi8r" contenteditable="true">&mdash;</td><td class="ctr e" data-k="bi8b" contenteditable="true">0.40</td></tr>
-        <tr><td><span class="e" data-k="bi7" contenteditable="true">Nictitating Membranes</span><div class="fx">inner eyelids &mdash; flash / debris eye protection</div></td><td class="ctr e" data-k="bi7r" contenteditable="true">&mdash;</td><td class="ctr e" data-k="bi7b" contenteditable="true">0.10</td></tr>
+        <tr><td><span class="e" data-k="bi7" contenteditable="true">Cat&rsquo;s Eyes</span><div class="fx">low-light vision built into the eyes &mdash; slit pupils &amp; eyeshine give them away</div></td><td class="ctr e" data-k="bi7r" contenteditable="true">&mdash;</td><td class="ctr e" data-k="bi7b" contenteditable="true">0.20</td></tr>
       </table>
-      <div class="note">Body Index 5.90 of 6 (0.10 free). Dropped Cat&rsquo;s Eyes (&minus;0.20) to fit the Trauma Damper (+0.40) &mdash; low-light now rides in goggles. Verify exact costs with GM (Man &amp; Machine).</div>
+      <div class="note">Body Index 6.00 of 6 &mdash; at the cap, no room for more bioware. Cat&rsquo;s Eyes (0.20) replaced Nictitating Membranes (0.10). Verify exact costs with GM (Man &amp; Machine).</div>
     </div>
     <div class="box">
       <h2>Fighting Style &mdash; &ldquo;Gun-Fu&rdquo;</h2>
@@ -638,24 +639,39 @@ window.__initGear=function(){
   function renderWeapons(){
     var wb=document.getElementById("weap-body"); if(!wb) return;
     wb.innerHTML="";
-    function row(name,m,am,d,desc){ var tr=document.createElement("tr"); var t0=document.createElement("td"); var nm=document.createElement("span"); nm.textContent=name; t0.appendChild(nm); if(desc){ var fx=document.createElement("div"); fx.className="fx"; fx.textContent=desc; t0.appendChild(fx); } tr.appendChild(t0); [m,am,d].forEach(function(t){ var td=document.createElement("td"); td.className="ctr"; td.textContent=t; tr.appendChild(td); }); wb.appendChild(tr); }
+    function row(name,m,am,d,desc,extra){ var tr=document.createElement("tr"); var t0=document.createElement("td"); var nm=document.createElement("span"); nm.textContent=name; t0.appendChild(nm); if(desc){ var fx=document.createElement("div"); fx.className="fx"; fx.textContent=desc; t0.appendChild(fx); } (extra||[]).forEach(function(x){ var ef=document.createElement("div"); ef.className="fx acc"; ef.textContent="+ "+x; t0.appendChild(ef); }); tr.appendChild(t0); [m,am,d].forEach(function(t){ var td=document.createElement("td"); td.className="ctr"; td.textContent=t; tr.appendChild(td); }); wb.appendChild(tr); }
     row("Cyber Dartgun (arm)","SS","int.","sedate","narcoject — nonlethal, puts a mark down");
     row("Retractable Spurs","—","—","(Str)M","concealed blades");
     row("Unarmed / pencil (bone lace)","—","—","(Str)M","fists / improvised; bone lacing makes it bite");
     var LMODS={"Sound Suppressor":"suppr.","Silencer":"silencer","Bipod":"bipod","Gas Vent III (recoil comp)":"gas-vent","Imaging Scope: Magnification 3":"×3 scope","Imaging Scope: Thermographic":"thermo scope","Imaging Scope: Low-Light":"LL scope","Smartgun system (internal, AK-98)":"smartgun"};
     var PMODS={"Laser Sight (standard)":"laser","Smartgun link (external)":"smartlink","Quick Draw Holster":"quick-draw","Concealable Holster":"concl. holster","Smartgun system (internal, pistol)":"smartgun"};
-    var WDESC={"Grenade: Flash":"blinds & deafens (no damage)","Grenade: Offensive (HE/AP)":"HE/AP blast","Grenade: Defensive (HE/AP)":"HE/AP blast","Grenade: Smoke":"visual smoke screen","Grenade: Smoke (IR/thermal)":"blocks normal & thermo vision","Grenade: Incendiary":"starts a fire","Grenade: Gas (Neuro-Stun)":"knockout gas cloud","Grenade: Ink (anti-invis)":"sprays dye — reveals invisibles","Grenade: Concussion":"stun blast","Throwing Knife":"silent thrown blade","Streetline Special (hold-out)":"deep-concealed backup","Ares Predator (heavy pistol)":"heavy pistol — dual-wield pair","AK-98 (assault rifle)":"versatile: single for range, burst/auto close","Missile Launcher (anti-air)":"guided missile — anti-air/vehicle; downs a chopper or drone"};
-    var lm=[],pm=[];
-    state.items.forEach(function(it){ if(grp(it)!=="w")return; if(LMODS[it.n]&&lm.indexOf(LMODS[it.n])<0)lm.push(LMODS[it.n]); if(PMODS[it.n]&&pm.indexOf(PMODS[it.n])<0)pm.push(PMODS[it.n]); });
+    var WDESC={"Grenade: Flash":"blinds & deafens (no damage)","Grenade: Offensive (HE/AP)":"HE/AP blast","Grenade: Defensive (HE/AP)":"HE/AP blast","Grenade: Smoke":"visual smoke screen","Grenade: Smoke (IR/thermal)":"blocks normal & thermo vision","Grenade: Incendiary":"starts a fire","Grenade: Gas (Neuro-Stun)":"knockout gas cloud","Grenade: Ink (anti-invis)":"sprays dye — reveals invisibles","Grenade: Concussion":"stun blast","Throwing Knife":"silent thrown blade","Knife":"melee / utility blade","Streetline Special (hold-out)":"deep-concealed backup, Conceal 8","Ares Predator (heavy pistol)":"heavy pistol, Conceal 5 — dual-wield pair (Ambidexterity)","AK-98 (assault rifle)":"versatile: single for range, burst/auto close; integral underbarrel grenade launcher","Missile Launcher (anti-air)":"guided missile — anti-air/vehicle; downs a chopper or drone"};
+    // What each accessory adds to the weapon it sits on (SR3)
+    var MODFX={"Smartgun system (internal, AK-98)":"smartgun + Smartlink II: −2 TN, ammo & range in vision",
+      "Smartgun system (internal, pistol)":"smartgun + Smartlink II: −2 TN, ammo & range in vision",
+      "Smartgun link (external)":"external smartgun + Smartlink II: −2 TN",
+      "Laser Sight (standard)":"laser sight: −1 TN (not cumulative with smartlink)",
+      "Sound Suppressor":"sound suppressor: burst/auto fire much harder to hear",
+      "Silencer":"silencer: single shots much harder to hear",
+      "Imaging Scope: Thermographic":"thermographic scope: aim by heat through dark & smoke, spots ruthenium camo",
+      "Imaging Scope: Low-Light":"low-light scope: aim in near darkness",
+      "Imaging Scope: Magnification 3":"×3 scope: cuts range modifiers on aimed shots (not with smartlink)",
+      "Gas Vent III (recoil comp)":"gas vent III: 3 points recoil compensation",
+      "Bipod":"bipod: recoil compensation when deployed",
+      "Quick Draw Holster":"quick-draw holster: faster draw",
+      "Concealable Holster":"concealable holster: harder to spot"};
+    var lm=[],pm=[],lfx=[],pfx=[];
+    state.items.forEach(function(it){ if(grp(it)!=="w")return; if(LMODS[it.n]&&lm.indexOf(LMODS[it.n])<0){lm.push(LMODS[it.n]);if(MODFX[it.n])lfx.push(MODFX[it.n]);} if(PMODS[it.n]&&pm.indexOf(PMODS[it.n])<0){pm.push(PMODS[it.n]);if(MODFX[it.n])pfx.push(MODFX[it.n]);} });
     function isLong(n){ return /assault rifle|sniper|SMG|sport rifle|shotgun|Carbine/.test(n); }
     function isPistol(n){ return /pistol|hold-out/.test(n); }
     var groups={},order=[];
     state.items.forEach(function(it){ if(grp(it)!=="w")return; if(WS[it.n]){ if(groups[it.n]==null){groups[it.n]=0;order.push(it.n);} groups[it.n]++; } });
     var longDone=false,pistDone=false;
-    order.forEach(function(n){ var s=WS[n],cnt=groups[n]; var label=n+(cnt>1?" ×"+cnt:"");
-      if(!longDone && isLong(n) && lm.length){ label+=" + "+lm.join(" + "); longDone=true; }
-      else if(!pistDone && isPistol(n) && pm.length){ label+=" + "+pm.join(" + "); pistDone=true; }
-      row(label,s[0],s[1],s[2],WDESC[n]); });
+    order.forEach(function(n){ var s=WS[n],cnt=groups[n]; var label=n+(cnt>1?" ×"+cnt:""),extra=[];
+      if(!longDone && isLong(n) && lm.length){ label+=" + "+lm.join(" + "); extra=lfx; longDone=true; }
+      else if(!pistDone && isPistol(n) && pm.length){ label+=" + "+pm.join(" + "); extra=pfx; pistDone=true; }
+      if(/BF|FA/.test(s[0])){ if(extra.indexOf(MODFX["Gas Vent III (recoil comp)"])<0&&extra.indexOf(MODFX["Bipod"])<0) extra=extra.concat(["no recoil compensation"]); }
+      row(label,s[0],s[1],s[2],WDESC[n],extra); });
   }
   var ARMORSTATS={"Lined Coat":[4,2],"Secure Long Coat":[4,2],"Armor Clothing":[3,0],"Armor Jacket":[5,3],"Armor Vest":[2,1],"Armor Vest w/ Plates":[3,2],"Form-Fit Body Armor (full-body suit)":[4,1],"Form-Fit Body Armor (shirt)":[3,0]};
   function renderArmor(){var ab=document.getElementById("armor-body");if(!ab)return;ab.innerHTML="";var any=false;state.items.forEach(function(it){if(grp(it)!=="w")return;var s=ARMORSTATS[it.n];if(s){any=true;var tr=document.createElement("tr");var t=document.createElement("td");t.textContent=it.n;var b=document.createElement("td");b.className="ctr";b.textContent=s[0];var i=document.createElement("td");i.className="ctr";i.textContent=s[1];tr.appendChild(t);tr.appendChild(b);tr.appendChild(i);ab.appendChild(tr);}});if(!any){var tr=document.createElement("tr");var t=document.createElement("td");t.className="fx";t.setAttribute("colspan","3");t.textContent="— nothing worn —";tr.appendChild(t);ab.appendChild(tr);}}
