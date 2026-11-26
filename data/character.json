@@ -1,17 +1,17 @@
 {
  "v": 1,
- "saved": "2026-11-26T07:31:42.078Z",
+ "saved": "2026-11-26T07:37:11.108Z",
  "sheet": {
   "f": {
    "a-ini": "3",
    "tr-cost": "28,000¥ new · Legal · Avail 2/48 hrs ",
    "name": "Liho",
-   "v-aka": "Babayaga · Babay . Boogeyman"
+   "v-aka": "Babayaga · Babay · Boogeyman"
   },
   "cm": {}
  },
  "gear": {
-  "cash": 51900,
+  "cash": 51845,
   "items": [
    {
     "n": "Ares Predator (heavy pistol)",
@@ -144,19 +144,14 @@
     "g": "s"
    },
    {
-    "n": "Ammo: APDS (x10)",
-    "c": 70,
-    "g": "s"
-   },
-   {
     "n": "Ammo: Gel (x10)",
     "c": 30,
-    "g": "s"
+    "g": "w"
    },
    {
     "n": "Ammo: Capsule (x10)",
     "c": 10,
-    "g": "s"
+    "g": "w"
    },
    {
     "n": "Missile Launcher (anti-air)",
@@ -172,6 +167,16 @@
     "n": "Missile: Guided (anti-air homing)",
     "c": 2000,
     "g": "s"
+   },
+   {
+    "n": "Ammo: Regular (x10)",
+    "c": 5,
+    "g": "w"
+   },
+   {
+    "n": "Ammo: Hollow Point (x10)",
+    "c": 50,
+    "g": "w"
    }
   ]
  }
