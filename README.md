@@ -50,7 +50,7 @@ The sheet is published with GitHub Pages and keeps its data in this repo, so it 
 - **Data:** `data/character.json` — `{ v, saved, sheet, gear }` (`sheet` = the `lividum_sheet_v3` object, `gear` = the `boogeyman_gear_v3` object). Every save is a commit, so the git history is the change log and backup.
 - **Loading:** read through the GitHub API (always fresh). If the API is unavailable (e.g. its 60 requests/hour limit for anonymous visitors), the copy published by Pages is used instead.
 - **Saving:** the **Save** button writes `data/character.json` through the GitHub API. That needs a GitHub fine-grained token (this repo only, *Contents: read & write*). The token is stored encrypted (PBKDF2-SHA256 + AES-GCM) with the owner's password in `data/key.json`; the password itself is stored nowhere.
-- **Password trick:** the correct password is answered "Wrong password" twice — only the 3rd correct entry unlocks saving. Wrong entries in between don't reset the count. Saving then stays unlocked on that device for **8 hours** (also across reloads), after which it locks and the trick starts again.
+- **Password:** the correct password unlocks saving on that device for **8 hours** (also across reloads); after that, Save asks for it again. The password box has a *show* button to check what was typed.
 - **Visitors' edits:** anyone can tap and change values, but without the password the changes stay in their own browser only ("unsaved changes (only on this device)"), with a *revert to online* link. They are dropped automatically as soon as a newer version is saved online.
 - **Two devices:** if the online copy changed since the page was loaded, Save asks before overwriting it.
 

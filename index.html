@@ -125,6 +125,8 @@
   .mrow{display:flex;gap:8px;justify-content:flex-end;align-items:center;}
   .mrow .mlink{margin-right:auto;}
   .bgo{border-color:var(--cyan);color:var(--cyan);}
+  .pwrow{position:relative;} .pwrow input{padding-right:58px;}
+  .pweye{position:absolute;right:6px;top:6px;height:28px;padding:0 8px;background:var(--panel2);border:1px solid var(--edge);border-radius:6px;color:var(--muted);font-family:var(--mono);font-size:10px;cursor:pointer;}
   .shake{animation:shk .35s;}
   @keyframes shk{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
 </style>
@@ -157,7 +159,7 @@
   <div class="modal" id="pw-modal" hidden>
     <form class="mbox" id="pw-form" autocomplete="off">
       <h3>Save online</h3>
-      <input type="password" id="pw-input" placeholder="Password" autocomplete="current-password">
+      <div class="pwrow"><input type="password" id="pw-input" placeholder="Password" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false"><button type="button" class="pweye" id="pw-eye" aria-label="Show password">show</button></div>
       <div class="mmsg" id="pw-msg"></div>
       <div class="mrow">
         <button type="button" class="mlink" id="pw-setup">token setup</button>
@@ -171,9 +173,9 @@
     <form class="mbox" id="su-form" autocomplete="off">
       <h3>Token setup</h3>
       <div class="note" style="margin:0 0 8px;">Owner only. Paste a GitHub fine-grained token for this repo (Contents: read &amp; write) and choose a password. The token is encrypted with the password and stored in <b>data/key.json</b>; the password is never stored anywhere.</div>
-      <input type="password" id="su-token" placeholder="GitHub token (github_pat_&hellip;)" autocomplete="off">
-      <input type="password" id="su-pw1" placeholder="Password (long: 4&ndash;5 words)" autocomplete="new-password">
-      <input type="password" id="su-pw2" placeholder="Repeat password" autocomplete="new-password">
+      <input type="password" id="su-token" placeholder="GitHub token (github_pat_&hellip;)" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false">
+      <input type="password" id="su-pw1" placeholder="Password (long: 4&ndash;5 words)" autocomplete="new-password" autocapitalize="none" autocorrect="off" spellcheck="false">
+      <input type="password" id="su-pw2" placeholder="Repeat password" autocomplete="new-password" autocapitalize="none" autocorrect="off" spellcheck="false">
       <div class="mmsg" id="su-msg"></div>
       <div class="mrow">
         <button type="button" class="btn" id="su-cancel">Cancel</button>
@@ -668,8 +670,7 @@ window.__initGear=function(){
 /* ===== Online sync =====
    Data lives in this repo as data/character.json and is read via the GitHub API (anyone can view).
    Saving needs a GitHub token, kept encrypted with the owner's password in data/key.json.
-   Password trick: the right password is answered "Wrong password" twice; the 3rd correct entry
-   unlocks saving on this device for 8 hours, then it locks again. */
+   The right password unlocks saving on this device for 8 hours, then it locks again. */
 (function(){
   "use strict";
   var OWNER="GorecStenli", REPO="shadowrun-boogeyman", BRANCH="main";
@@ -678,8 +679,7 @@ window.__initGear=function(){
   var K_SHEET="lividum_sheet_v3", K_GEAR="boogeyman_gear_v3";
   var K_SYNC="boogeyman_sync_v1";  // {base: sha of the online file this device's data is based on, dirty: unsaved local edits}
   var K_AUTH="boogeyman_auth_v1";  // {tok, until} - decrypted token while unlocked
-  var K_OKC="boogeyman_okc_v1";    // correct-password counter for the "wrong twice" trick
-  var UNLOCK_MS=8*3600*1000, NEED_OK=3, ITER=250000;
+  var UNLOCK_MS=8*3600*1000, ITER=250000;
 
   function lsGet(k){try{var r=localStorage.getItem(k);return r?JSON.parse(r):null;}catch(e){return null;}}
   function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
@@ -764,7 +764,8 @@ window.__initGear=function(){
     if(a)lsDel(K_AUTH);
     return null;
   }
-  function unlock(tok){lsDel(K_OKC);lsSet(K_AUTH,{tok:tok,until:Date.now()+UNLOCK_MS});}
+  function unlock(tok){lsSet(K_AUTH,{tok:tok,until:Date.now()+UNLOCK_MS});}
+  lsDel("boogeyman_okc_v1"); // leftover counter from the removed "wrong twice" trick
   function timeLeft(){var a=lsGet(K_AUTH);if(!a)return "";var m=Math.max(0,Math.round((a.until-Date.now())/60000));return Math.floor(m/60)+"h "+(m%60)+"m";}
 
   /* ---- UI ---- */
@@ -850,7 +851,10 @@ window.__initGear=function(){
   var pwM=$("pw-modal"),pwF=$("pw-form"),pwI=$("pw-input"),pwMsg=$("pw-msg"),pwOk=$("pw-ok");
   function msg(el,t,cls){el.textContent=t;el.className="mmsg"+(cls?" "+cls:"");}
   function shake(el){el.classList.remove("shake");void el.offsetWidth;el.classList.add("shake");}
-  function openPw(){pwI.value="";msg(pwMsg,"");pwOk.disabled=false;pwM.hidden=false;setTimeout(function(){pwI.focus();},30);}
+  var pwEye=$("pw-eye");
+  function eye(show){pwI.type=show?"text":"password";pwEye.textContent=show?"hide":"show";}
+  pwEye.addEventListener("click",function(){eye(pwI.type==="password");pwI.focus();});
+  function openPw(){eye(false);pwI.value="";msg(pwMsg,"");pwOk.disabled=false;pwM.hidden=false;setTimeout(function(){pwI.focus();},30);}
   function closePw(){pwM.hidden=true;}
   function wrong(){pwOk.disabled=false;pwI.value="";msg(pwMsg,"Wrong password");shake(pwF);pwI.focus();}
   $("pw-cancel").addEventListener("click",closePw);
@@ -862,8 +866,6 @@ window.__initGear=function(){
       if(!blob){pwOk.disabled=false;msg(pwMsg,"No key yet - use token setup first.");return;}
       return decryptToken(blob,pw).then(function(tok){
         if(!tok)return wrong();
-        var n=(+lsGet(K_OKC)||0)+1;
-        if(n<NEED_OK){lsSet(K_OKC,n);return wrong();}
         unlock(tok);closePw();doSave(tok);
       });
     }).catch(function(e){console.error(e);pwOk.disabled=false;msg(pwMsg,"Can't reach GitHub - try again.");});
