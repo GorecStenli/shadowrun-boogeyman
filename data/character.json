@@ -1,6 +1,6 @@
 {
  "v": 1,
- "saved": "2026-11-26T07:51:54.822Z",
+ "saved": "2026-11-26T09:46:03.837Z",
  "sheet": {
   "f": {
    "a-ini": "3",
@@ -14,7 +14,7 @@
   "cm": {}
  },
  "gear": {
-  "cash": 51845,
+  "cash": 50545,
   "items": [
    {
     "n": "Ares Predator (heavy pistol)",
@@ -180,6 +180,21 @@
     "n": "Ammo: Hollow Point (x10)",
     "c": 50,
     "g": "w"
+   },
+   {
+    "n": "Antidote Patch",
+    "c": 300,
+    "g": "w"
+   },
+   {
+    "n": "Trauma Patch",
+    "c": 500,
+    "g": "w"
+   },
+   {
+    "n": "Trauma Patch",
+    "c": 500,
+    "g": "s"
    }
   ]
  }
