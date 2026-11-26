@@ -10,7 +10,7 @@ Offline: open [`index.html`](index.html) in any modern browser (desktop or mobil
 
 ## What's inside the sheet
 
-- **Core** — attributes (natural / augmented), vitals, pools (Combat 9, Karma 7), movement & lift, transport (vehicle stats — Eurocar Westwind 2000), edges/flaws, contacts, background, and a character portrait.
+- **Core** — attributes (natural / augmented), vitals, pools (Combat 9, Karma 7), movement & lift, transport (vehicle stats — Honda-GM 3220 ZX), edges/flaws, contacts, background, and a character portrait.
 - **Skills** — active, knowledge and language skills with specializations.
 - **Combat** — condition monitor, weapons, armor and accessories. Weapons/armor/accessories are driven live from the Gear tab (only items in the "On hand / worn" group show here).
 - **Gear** — interactive inventory with nuyen tracking. Items are split into two groups — **On hand / worn** and **Backpack (in trunk)** — and sorted by type with icons (weapon, armor, optics, tool, ammo, grenade, medical…). Drag items between groups or use the arrow button. `+` adds an item (deducting its cost) via a search over a Cannon Companion equipment database; `−` removes it after a Yes/No confirm (no refund).
