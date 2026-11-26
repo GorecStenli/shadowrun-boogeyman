@@ -10,7 +10,7 @@ Offline: open [`index.html`](index.html) in any modern browser (desktop or mobil
 
 ## What's inside the sheet
 
-- **Core** — attributes (natural / augmented), vitals, pools (Combat 9, Karma 7), movement & lift, edges/flaws, contacts, background, and a character portrait.
+- **Core** — attributes (natural / augmented), vitals, pools (Combat 9, Karma 7), movement & lift, transport (vehicle stats — Eurocar Westwind 2000), edges/flaws, contacts, background, and a character portrait.
 - **Skills** — active, knowledge and language skills with specializations.
 - **Combat** — condition monitor, weapons, armor and accessories. Weapons/armor/accessories are driven live from the Gear tab (only items in the "On hand / worn" group show here).
 - **Gear** — interactive inventory with nuyen tracking. Items are split into two groups — **On hand / worn** and **Backpack (in trunk)** — and sorted by type with icons (weapon, armor, optics, tool, ammo, grenade, medical…). Drag items between groups or use the arrow button. `+` adds an item (deducting its cost) via a search over a Cannon Companion equipment database; `−` removes it after a Yes/No confirm (no refund).
@@ -36,7 +36,7 @@ The portrait is kept here as the original for future editing. `index.html` alrea
 ## Development notes
 
 - The whole app is a single self-contained file, `index.html` — HTML, CSS and JS inline, with the portrait embedded as a `data:` URI. (The background music was removed before going public — it was a copyrighted soundtrack track.) It also exists as a Claude artifact (live preview).
-- Tabs: Core / Skills / Combat / Gear / Ware.
+- Tabs: Core / Skills / Combat / Gear / Ware — they sit inside the sticky header, so they stay on screen while scrolling.
 - Working state lives in the browser's `localStorage`, under two keys:
   - `lividum_sheet_v3` — every editable field (attributes, pools, vitals, skills, cyber/bioware…), keyed by its `data-k` id.
   - `boogeyman_gear_v3` — the inventory: `{ cash, items: [ { n: name, c: cost, g: group } ] }`, where `g` is `"w"` (on hand / worn) or `"s"` (backpack / stowed).
