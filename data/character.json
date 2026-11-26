@@ -1,0 +1,175 @@
+{
+ "v": 1,
+ "saved": "2026-11-26T07:08:59.082Z",
+ "sheet": {
+  "f": {
+   "a-ini": "3"
+  },
+  "cm": {}
+ },
+ "gear": {
+  "cash": 51900,
+  "items": [
+   {
+    "n": "Ares Predator (heavy pistol)",
+    "c": 450,
+    "g": "w"
+   },
+   {
+    "n": "Ares Predator (heavy pistol)",
+    "c": 450,
+    "g": "w"
+   },
+   {
+    "n": "AK-98 (assault rifle)",
+    "c": 2500,
+    "g": "w"
+   },
+   {
+    "n": "Smartgun system (internal, pistol)",
+    "c": 675,
+    "g": "w"
+   },
+   {
+    "n": "Smartgun system (internal, pistol)",
+    "c": 675,
+    "g": "w"
+   },
+   {
+    "n": "Smartgun system (internal, AK-98)",
+    "c": 3750,
+    "g": "w"
+   },
+   {
+    "n": "Streetline Special (hold-out)",
+    "c": 100,
+    "g": "w"
+   },
+   {
+    "n": "Knife",
+    "c": 30,
+    "g": "w"
+   },
+   {
+    "n": "Throwing Knife",
+    "c": 20,
+    "g": "w"
+   },
+   {
+    "n": "Throwing Knife",
+    "c": 20,
+    "g": "w"
+   },
+   {
+    "n": "Throwing Knife",
+    "c": 20,
+    "g": "w"
+   },
+   {
+    "n": "Throwing Knife",
+    "c": 20,
+    "g": "w"
+   },
+   {
+    "n": "Lined Coat",
+    "c": 700,
+    "g": "w"
+   },
+   {
+    "n": "Form-Fit Body Armor (full-body suit)",
+    "c": 2000,
+    "g": "w"
+   },
+   {
+    "n": "Low-Light + Thermo Goggles",
+    "c": 2000,
+    "g": "w"
+   },
+   {
+    "n": "Imaging Scope: Thermographic",
+    "c": 1200,
+    "g": "w"
+   },
+   {
+    "n": "Sound Suppressor",
+    "c": 750,
+    "g": "w"
+   },
+   {
+    "n": "Medkit (Rating 3)",
+    "c": 200,
+    "g": "w"
+   },
+   {
+    "n": "Trauma Patch",
+    "c": 500,
+    "g": "w"
+   },
+   {
+    "n": "Fake SIN (Rating 4)",
+    "c": 4000,
+    "g": "w"
+   },
+   {
+    "n": "Grenade: Smoke (IR/thermal)",
+    "c": 80,
+    "g": "s"
+   },
+   {
+    "n": "Grenade: Smoke (IR/thermal)",
+    "c": 80,
+    "g": "s"
+   },
+   {
+    "n": "Grenade: Ink (anti-invis)",
+    "c": 40,
+    "g": "s"
+   },
+   {
+    "n": "Grenade: Flash",
+    "c": 250,
+    "g": "s"
+   },
+   {
+    "n": "Maglock Passkey (illegal)",
+    "c": 2000,
+    "g": "s"
+   },
+   {
+    "n": "Ruthenium Cloak",
+    "c": 27500,
+    "g": "s"
+   },
+   {
+    "n": "Ammo: APDS (x10)",
+    "c": 70,
+    "g": "s"
+   },
+   {
+    "n": "Ammo: Gel (x10)",
+    "c": 30,
+    "g": "s"
+   },
+   {
+    "n": "Ammo: Capsule (x10)",
+    "c": 10,
+    "g": "s"
+   },
+   {
+    "n": "Missile Launcher (anti-air)",
+    "c": 7000,
+    "g": "s"
+   },
+   {
+    "n": "Missile: Guided (anti-air homing)",
+    "c": 2000,
+    "g": "s"
+   },
+   {
+    "n": "Missile: Guided (anti-air homing)",
+    "c": 2000,
+    "g": "s"
+   }
+  ]
+ }
+}
